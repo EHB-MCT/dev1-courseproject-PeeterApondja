@@ -3,49 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Block Shape</title>
+		<title>Interactive Design</title>
+		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body>
-		<canvas
-			id="blockCanvas"
-			width="400"
-			height="400"
-			style="background-color: #f8f8f8"
-		></canvas>
+		<h1>Peeter Apondja</h1>
+		<canvas id="interactiveCanvas"></canvas>
 
-		<script>
-			const canvas = document.getElementById("blockCanvas");
-			const ctx = canvas.getContext("2d");
-
-			const blockSize = 50;
-
-			const blockShape = [
-				[1, 1, 1, 1, 1, 1],
-				[0, 0, 1, 0, 0, 0],
-				[0, 0, 1, 0, 0, 0],
-				[0, 1, 1, 1, 0, 0],
-				[0, 0, 1, 0, 0, 0],
-				[0, 0, 1, 0, 0, 0],
-				[1, 1, 1, 1, 1, 1],
-			];
-
-			function drawBlocks() {
-				ctx.fillStyle = "#9be564";
-				for (let row = 0; row < blockShape.length; row++) {
-					for (let column = 0; column < blockShape[row].length; column++) {
-						if (blockShape[row][column] === 1) {
-							ctx.fillRect(
-								column * blockSize,
-								row * blockSize,
-								blockSize,
-								blockSize
-							);
-						}
-					}
-				}
-			}
-
-			drawBlocks();
-		</script>
+		<script src="spaceInvader.js"></script>
 	</body>
 </html>
