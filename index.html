@@ -1,12 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Block Shape</title>
+	</head>
+	<body>
+		<canvas
+			id="blockCanvas"
+			width="400"
+			height="400"
+			style="background-color: #f8f8f8"
+		></canvas>
 
-<head>
-    <script src="spaceInvader.js" type="module"></script>
-    <link rel="stylesheet" type="text/css" href="styles/index.css" />
-</head>
+		<script>
+			const canvas = document.getElementById("blockCanvas");
+			const ctx = canvas.getContext("2d");
 
-<body>
-    <canvas id="canvas"> </canvas>
-</body>
+			const blockSize = 50;
 
+			const blockShape = [
+				[1, 1, 1, 1, 1, 1],
+				[0, 0, 1, 0, 0, 0],
+				[0, 0, 1, 0, 0, 0],
+				[0, 1, 1, 1, 0, 0],
+				[0, 0, 1, 0, 0, 0],
+				[0, 0, 1, 0, 0, 0],
+				[1, 1, 1, 1, 1, 1],
+			];
+
+			function drawBlocks() {
+				ctx.fillStyle = "#9be564";
+				for (let row = 0; row < blockShape.length; row++) {
+					for (let column = 0; column < blockShape[row].length; column++) {
+						if (blockShape[row][column] === 1) {
+							ctx.fillRect(
+								column * blockSize,
+								row * blockSize,
+								blockSize,
+								blockSize
+							);
+						}
+					}
+				}
+			}
+
+			drawBlocks();
+		</script>
+	</body>
 </html>
