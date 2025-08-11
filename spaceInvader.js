@@ -74,7 +74,7 @@ class Circle {
 }
 
 
- @param {number} pixelSize 
+ @param {number} 
 
 function drawSpaceInvader(pixelSize) {
     
