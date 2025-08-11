@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const circles = [];
-const numCircles = 99;
+const numCircles = 100;
 const mouse = { x: null, y: null };
 
 window.addEventListener("mousemove", (event) => {
